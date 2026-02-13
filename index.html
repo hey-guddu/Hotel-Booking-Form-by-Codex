@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StayEase | Hotel Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container">
+      <div class="logo">StayEase</div>
+      <a class="nav-link" href="#booking">Book Now</a>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="eyebrow">Premium Stays, Effortless Booking</p>
+      <h1>Find your perfect hotel getaway in minutes.</h1>
+      <p class="subtitle">Compare destinations, choose your dates, and reserve with confidence—all from one simple form.</p>
+      <a href="#booking" class="cta-btn">Start Booking</a>
+    </div>
+  </header>
+
+  <main class="container main-content" id="booking">
+    <section class="booking-card" aria-labelledby="form-title">
+      <h2 id="form-title">Hotel Booking Form</h2>
+      <p class="form-intro">Enter your trip details and we’ll find the best available options for you.</p>
+
+      <form id="hotelBookingForm" novalidate>
+        <div class="form-grid">
+          <label>
+            Full Name
+            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required />
+          </label>
+
+          <label>
+            Email Address
+            <input type="email" id="email" name="email" placeholder="john@email.com" required />
+          </label>
+
+          <label>
+            Destination
+            <select id="destination" name="destination" required>
+              <option value="">Select destination</option>
+              <option>Paris</option>
+              <option>Tokyo</option>
+              <option>Bali</option>
+              <option>New York</option>
+              <option>Dubai</option>
+            </select>
+          </label>
+
+          <label>
+            Guests
+            <input type="number" id="guests" name="guests" min="1" max="10" value="2" required />
+          </label>
+
+          <label>
+            Check-in Date
+            <input type="date" id="checkIn" name="checkIn" required />
+          </label>
+
+          <label>
+            Check-out Date
+            <input type="date" id="checkOut" name="checkOut" required />
+          </label>
+
+          <label class="full-width">
+            Room Type
+            <div class="radio-group" role="radiogroup" aria-label="Room type">
+              <label><input type="radio" name="roomType" value="Standard" checked /> Standard</label>
+              <label><input type="radio" name="roomType" value="Deluxe" /> Deluxe</label>
+              <label><input type="radio" name="roomType" value="Suite" /> Suite</label>
+            </div>
+          </label>
+
+          <label class="full-width">
+            Special Requests
+            <textarea id="requests" name="requests" rows="4" placeholder="Airport pickup, high floor, late check-in..."></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn">Confirm Booking</button>
+      </form>
+
+      <p id="formMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
